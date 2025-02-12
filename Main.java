@@ -2,7 +2,7 @@ import java.sql.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;  // Needed for ArrayList
+import java.util.ArrayList;
 
 // Base class Bank
 class Bank {
@@ -185,7 +185,7 @@ public class Main {
         branchPanel.add(createDepositButton);
         branchPanel.add(deleteDepositButton);
 
-        reloadBranches(); // Initialize branches dynamically
+        reloadBranches(); // Updates branches
 
         // Deposit Panel
         depositPanel = new JPanel(new BorderLayout());
@@ -244,7 +244,7 @@ public class Main {
                 branchNames[0]
         );
         if (selectedBranchName == null) {
-            return; // User canceled
+            return; 
         }
 
         Branch selectedBranch = null;
@@ -281,7 +281,7 @@ public class Main {
             return;
         }
 
-        // Perform deposit operation
+        //  deposit operation
         boolean success = selectedBranch.depositMoney(depositName, amount);
         if (success) {
             JOptionPane.showMessageDialog(frame, "Deposit successful!");
